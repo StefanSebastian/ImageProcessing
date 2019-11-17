@@ -1,6 +1,6 @@
 import cv2
-logo = cv2.imread('C:/Users/Sebi/study/master/opencv/lab2/logo_opencv.png')
-scene = cv2.imread('C:/Users/Sebi/study/master/opencv/lab2/lena.jpg')
+logo = cv2.imread('./logo_opencv.png')
+scene = cv2.imread('./lena.jpg')
 logo = cv2.resize(logo, (0, 0), fx=1, fy=1)
 logogray = cv2.cvtColor(logo, cv2.COLOR_BGR2GRAY)
 retval, logogray = cv2.threshold(logogray, 200, 255, cv2.THRESH_BINARY_INV)
