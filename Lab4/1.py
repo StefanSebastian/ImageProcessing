@@ -48,7 +48,12 @@ for compare_method in range(4):
         comp_hist = cv2.compareHist(test_im_hist, hist, compare_method)
         comparisons.append(comp_hist)
 
-    most_similar = [im for (c, im) in sorted(zip(comparisons, images), key=lambda pair: pair[0], reverse=True)]
+    if compare_method == 1 or compare_method == 3:
+        should_rev = False    
+    else:
+        should_rev = True
+    most_similar = [im for (c, im) in sorted(zip(comparisons, images), key=lambda pair: pair[0], reverse=should_rev)]
+    
     for i in range(3):
         im = most_similar[i]
         cv2.imshow("comparison_" + str(compare_method) + "_im_" + str(i), im)
