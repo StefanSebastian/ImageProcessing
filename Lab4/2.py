@@ -5,7 +5,7 @@ import numpy as np
 
 images = [cv2.imread(file) for file in glob.glob("./dataset/*.jpg")]
 
-test_im = cv2.imread('./test_im/4.jpg')
+test_im = cv2.imread('./test_im/1.jpg')
 cv2.imshow("test_image", test_im)
 
 color_space_size = 16
