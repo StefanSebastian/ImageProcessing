@@ -1,11 +1,9 @@
 import glob
 import cv2
-import copy
-import sys
 
 images = [cv2.imread(file) for file in glob.glob("./dataset/*.jpg")]
 
-test_im = cv2.imread('./test_im/1.jpg')
+test_im = cv2.imread('./test_im/4.jpg')
 cv2.imshow("test_image", test_im)
 
 # convert to HSV
