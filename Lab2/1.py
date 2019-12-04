@@ -9,7 +9,4 @@ roi = scene[0:logogray.shape[0], scene.shape[1]-logogray.shape[1]:scene.shape[1]
 cv2.add(logo, roi, roi, logogray)
 cv2.imshow("scene", scene)
 
-while(True):
-    if cv2.waitKey(1) == ord('q'):
-        break 
-cv2.destroyAllWindows()
+cv2.waitKey(0)

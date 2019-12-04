@@ -56,7 +56,10 @@ def build_result(img, corners):
     new_img = np.zeros((img.shape[0], img.shape[1], 1), np.uint8)
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):
-            new_img[i][j] = 255 if corners[i][j] == 255 else img[i][j]
+            new_img[i][j] = img[i][j]
+            if corners[i][j] == 255:
+                cv2.circle(new_img, (j, i), 5, (255, 255, 255), thickness=1, lineType=8, shift=0)
+            # new_img[i][j] = 255 if corners[i][j] == 255 else img[i][j]
     return new_img
 
 def corner_detection(img_path, threshold_val):
