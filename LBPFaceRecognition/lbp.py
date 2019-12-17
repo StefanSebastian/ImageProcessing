@@ -8,7 +8,7 @@ GRIDY = 8
 
 # read and prepare data
 print("Reading data")
-test_im = cv2.imread('./test/image_0071.jpg')
+test_im = cv2.imread('./test/image_0212.jpg')
 test_im_g = cv2.cvtColor(test_im, cv2.COLOR_BGR2GRAY)
 
 db = [cv2.imread(file) for file in glob.glob('./db/*.jpg')]
