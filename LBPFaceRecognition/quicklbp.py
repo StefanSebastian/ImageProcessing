@@ -9,7 +9,7 @@ GRIDY = 8
 
 # read and prepare data
 print("Reading data")
-test_im = cv2.imread('./test/image_0212.jpg')
+test_im = cv2.imread('./test2/image_0071.jpg')
 test_im_g = cv2.cvtColor(test_im, cv2.COLOR_BGR2GRAY)
 
 print("Computing LBP")
@@ -62,7 +62,7 @@ def euclidean_dist(hist1, hist2):
     return dist
 
 # read data
-db = [cv2.imread(file) for file in glob.glob('./db/*.jpg')]
+db = [cv2.imread(file) for file in glob.glob('./db2/*.jpg')]
 with open ('db_hist', 'rb') as fp:
     db_hist = pickle.load(fp)
 
