@@ -13,11 +13,11 @@ ro = 180
 
 # range is from -diag to diag ; and from 0 to 180
 H = np.zeros((int(d * 2), ro + 1), np.uint8)
-
+ro_stp = 1
 for i in range(h):
     for j in range(w):
         if edges[i][j] != 0:
-            for ro_c in range(181):
+            for ro_c in range(0, 181, ro_stp):
                 d_c = i * math.sin(ro_c) + j * math.cos(ro_c) + d # add diag value to avoid negative values
                 d_c = int(d_c)
                 H[d_c][ro_c] += 1
@@ -32,6 +32,7 @@ acc.sort(reverse = True)
 acc = acc[:5]
 
 # draw lines on image
+# https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html
 for i in range(H.shape[0]):
     for j in range(H.shape[1]):
         if H[i][j] in acc:
